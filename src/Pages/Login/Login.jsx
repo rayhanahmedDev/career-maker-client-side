@@ -1,29 +1,83 @@
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Login = () => {
+
+    const {googleLogin,signIn} = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const [loginError, setLoginError] = useState('')
+    const [success, setSuccess] = useState('')
+
+    // sign in 
+    const handleSignIn = e =>{
+        e.preventDefault()
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        console.log(email,password)
+        setLoginError('')
+        setSuccess('')
+
+        signIn(email,password)
+        .then(result =>{
+            console.log(result.user)
+            navigate(location?. state? location.state : '/')
+            setSuccess('You Are Login Successfully ')
+            
+        })
+        .catch(error =>{
+            console.error(error)
+            setLoginError('Please Provide a Right Password')
+        })
+    }
+
+     // google sign in
+     const handleGoogle = ()=>{
+        googleLogin()
+        .then(result =>{
+            navigate(location?. state? location.state : '/')
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
+    }
+
     return (
-        <div className="flex justify-center items-center h-[80vh]">
-            <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
-                <form className="space-y-6" action="#">
-                    <h5 className="text-3xl text-center font-medium text-gray-900 dark:text-white">Register Now</h5>
-                    <div>
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Name</label>
-                        <input type="text" name="name" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Name" required />
+        <div className="hero lg:my-16 pb-12 mt-12">
+            <div className="card bg-gradient-to-r from-[#FF3300] to-[#FF8938] flex-shrink-0 w-full max-w-sm shadow-2xl">
+                <form onSubmit={handleSignIn} className="card-body">
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-white">Email</span>
+                        </label>
+                        <input type="email" name="email" placeholder="Your Email" className="input" required />
                     </div>
-                    <div>
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                        <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Email" required />
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text text-white">Password</span>
+                        </label>
+                        <input type="password" name="password" placeholder="Your Password" className="input" required />
                     </div>
-                    <div>
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-                        <input type="password" name="password" id="password" placeholder="Your Password" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required /> 
+                    <div className="form-control mt-6">
+                        <button className="btn bg-white text-[#FF3300]">Login</button>
                     </div>
-                    <button type="submit" className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
-                    <div className="text-sm text-center font-medium text-gray-500 dark:text-gray-300">
-                        Not registered? <Link to='/register' className="text-blue-700 hover:underline dark:text-blue-500">Create Account</Link>
+                    <div className="form-control mt-6">
+                        <button onClick={handleGoogle} className="btn w-full bg-white text-[#FF3300]"> <FcGoogle className='text-[31px]'></FcGoogle> Login With Google</button>
                     </div>
+                    <p className='text-center text-white'>Don’t have an account?<Link to='/register' className="font-bold text-white ml-2">Register</Link></p>
+                    {
+                        loginError && <p className="text-white text-center">{loginError}</p>
+                    }
+                    {
+                        success && <p className="text-white text-center">{success}</p>
+                    }
                 </form>
+
             </div>
         </div>
     )

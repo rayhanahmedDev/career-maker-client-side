@@ -11,24 +11,25 @@ import Home from './Pages/Home/Home';
 import Services from './Pages/Services/Services';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
+import AuthProvider from './provider/AuthProvider';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Root></Root>,
-    errorElement:<ErrorPage></ErrorPage>,
-    children:[
+    element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
       {
         path: '/',
-        element:<Home></Home>
+        element: <Home></Home>
       },
       {
-        path:'/services',
-        element:<Services></Services>
+        path: '/services',
+        element: <Services></Services>
       },
       {
         path: '/login',
-        element:<Login></Login>
+        element: <Login></Login>
       },
       {
         path: '/register',
@@ -40,6 +41,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
