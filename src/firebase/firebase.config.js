@@ -1,17 +1,18 @@
 
 import { initializeApp } from "firebase/app";
-
+import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAwRdzdXEPTBYS1QcO6fhk_8ubh-xXWpGI",
-  authDomain: "career-maker-assignment-11.firebaseapp.com",
-  projectId: "career-maker-assignment-11",
-  storageBucket: "career-maker-assignment-11.appspot.com",
-  messagingSenderId: "755116808734",
-  appId: "1:755116808734:web:4b2b5dad3eccdbad1fac0f"
+  apiKey:import.meta.env.VITE_apiKey,
+  authDomain:import.meta.env.VITE_authDomain,
+  projectId:import.meta.env.VITE_projectId,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId,
+  appId:import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export default app;
+const auth = getAuth(app);
+export default auth;
