@@ -12,13 +12,13 @@ const Banner = () => {
                     <h2 className='text-5xl font-bold'>Free Tour Community</h2>
                     <p>Local tours and guide services are tourism-related businesses that provide guided experiences and tours to visitors in specific locations or regions</p>
                     <div className=''>
-                        <button className='btn bg-[#FF3811] text-white border-[#FF3811]'> Discover More</button>
+                        <button className='btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white border-[#FF3811]'> Discover More</button>
                     </div>
                 </div>
                 </div>
                 <div className="absolute flex bottom-8 right-5">
                     <a href="#slide3" className="btn btn-circle mr-5 btn-outline text-white">❮</a>
-                    <a href="#slide2" className="btn btn-circle text-white bg-[#FF3811] border-[#FF3811]">❯</a>
+                    <a href="#slide2" className="btn btn-circle text-white bg-gradient-to-r from-[#FF3300] to-[#FF8938] border-[#FF3811]">❯</a>
                 </div>
             </div>
             <div id="slide2" className="carousel-item relative w-full">
@@ -28,13 +28,13 @@ const Banner = () => {
                     <h2 className='text-5xl font-bold'>Free Tour Community</h2>
                     <p>Local tours and guide services are tourism-related businesses that provide guided experiences and tours to visitors in specific locations or regions</p>
                     <div className=''>
-                        <button className='btn bg-[#FF3811] text-white border-[#FF3811]'> Discover More</button>
+                        <button className='btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white border-[#FF3811]'> Discover More</button>
                     </div>
                 </div>
                 </div>
                 <div className="absolute flex bottom-8 right-5">
                     <a href="#slide1" className="btn btn-circle mr-5 btn-outline text-white">❮</a>
-                    <a href="#slide3" className="btn btn-circle  text-white bg-[#FF3811] border-[#FF3811]">❯</a>
+                    <a href="#slide3" className="btn btn-circle  text-white bg-gradient-to-r from-[#FF3300] to-[#FF8938] border-[#FF3811]">❯</a>
                 </div>
             </div>
             <div id="slide3" className="carousel-item relative w-full">
@@ -44,7 +44,7 @@ const Banner = () => {
                     <h2 className='text-5xl font-bold'>Free Tour Community</h2>
                     <p>Local tours and guide services are tourism-related businesses that provide guided experiences and tours to visitors in specific locations or regions</p>
                     <div className=''>
-                        <button className='btn bg-[#FF3811] text-white border-[#FF3811]'> Discover More</button>
+                        <button className='btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white border-[#FF3811]'> Discover More</button>
                     </div>
                 </div>
                 </div>

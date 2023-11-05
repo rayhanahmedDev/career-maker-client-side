@@ -41,7 +41,7 @@ const Navber = () => {
                     </details> : ""}
                     </ul>
                 </div>
-               <h2><span className="text-2xl font-semibold text-[#FF3811]">FREE TOUR</span><span className="text-3xl font-normal"> <br />COMMUNITY</span></h2>
+               <h2><span className="text-2xl font-semibold text-[#FF3300]">FREE TOUR</span><span className="text-2xl font-normal"> <br />COMMUNITY</span></h2>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu-horizontal py-5 px-1">
