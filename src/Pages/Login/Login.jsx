@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -11,7 +12,6 @@ const Login = () => {
     const navigate = useNavigate()
 
     const [loginError, setLoginError] = useState('')
-    const [success, setSuccess] = useState('')
 
     // sign in 
     const handleSignIn = e =>{
@@ -20,13 +20,17 @@ const Login = () => {
         const password = e.target.password.value;
         console.log(email,password)
         setLoginError('')
-        setSuccess('')
 
         signIn(email,password)
         .then(result =>{
             console.log(result.user)
             navigate(location?. state? location.state : '/')
-            setSuccess('You Are Login Successfully ')
+            // setSuccess('You Are Login Successfully ')
+            Swal.fire(
+                'Login Successfully',
+                'You clicked the button!',
+                'success'
+              )
             
         })
         .catch(error =>{
@@ -72,9 +76,6 @@ const Login = () => {
                     <p className='text-center text-white'>Don’t have an account?<Link to='/register' className="font-bold text-white ml-2">Register</Link></p>
                     {
                         loginError && <p className="text-white text-center">{loginError}</p>
-                    }
-                    {
-                        success && <p className="text-white text-center">{success}</p>
                     }
                 </form>
 

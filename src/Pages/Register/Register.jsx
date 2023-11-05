@@ -2,12 +2,13 @@ import { Link } from "react-router-dom";
 import { FcGoogle } from 'react-icons/fc';
 import { useContext, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const {googleLogin,createUser} = useContext(AuthContext)
 
     const [registerError, setRegisterError] = useState('')
-    const [success, setSuccess] = useState('')
+    // const [success, setSuccess] = useState('')
 
     // create user
     const handleRegister = e =>{
@@ -17,7 +18,7 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(email,password,name)
         setRegisterError('')
-        setSuccess('')
+        // setSuccess('')
 
         // error handling
         if(password.length < 6){
@@ -36,7 +37,12 @@ const Register = () => {
         createUser(email,password)
         .then(result =>{
             console.log(result.user)
-            setSuccess('Your Register Successfully')
+            Swal.fire(
+                'Register Successfully',
+                'You clicked the button!',
+                'success'
+              )
+            
         })   
         .catch(error =>{
             console.error(error)
@@ -88,9 +94,9 @@ const Register = () => {
                         {
                             registerError && <p className='text-center text-white'>{registerError}</p>
                         }
-                        {
+                        {/* {
                             success && <p className='text-center text-white'>{success}</p>
-                        }
+                        } */}
                     </form>
                     
                 </div>
