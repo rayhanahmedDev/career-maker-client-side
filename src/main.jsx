@@ -12,7 +12,11 @@ import Services from './Pages/Services/Services';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
-import PrivateRoute from './provider/PrivateRoute';
+import MyServices from './Pages/MyServices/MyServices';
+import AddServices from './Pages/AddServices/AddServices';
+import MySchedules from './Pages/MySchedules/MySchedules';
+
+
 
 const router = createBrowserRouter([
   {
@@ -22,7 +26,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: '/',
-        element: <PrivateRoute><Home></Home></PrivateRoute>
+        element: <Home></Home>
       },
       {
         path: '/services',
@@ -35,9 +39,22 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/my-services',
+        element: <MyServices></MyServices>
+      },
+      {
+        path: '/add-services',
+        element:<AddServices></AddServices>
+      },
+      {
+        path:'/my-schedules',
+        element:<MySchedules></MySchedules>
       }
     ]
   },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

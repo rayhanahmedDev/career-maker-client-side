@@ -4,7 +4,7 @@ import Navber from "../Pages/Navber/Navber";
 
 const Root = () => {
     return (
-        <div>
+        <div className="max-w-[1440px] mx-auto">
             <div>
                 <Navber></Navber>
             </div>
