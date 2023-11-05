@@ -41,7 +41,7 @@ const Navber = () => {
                     </details> : ""}
                     </ul>
                 </div>
-               <h2><span className="text-2xl font-semibold text-[#f85f34]">FREE TOUR</span><span className="text-3xl font-normal"> <br />COMMUNITY</span></h2>
+               <h2><span className="text-2xl font-semibold text-[#FF3811]">FREE TOUR</span><span className="text-3xl font-normal"> <br />COMMUNITY</span></h2>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu-horizontal py-5 px-1">
@@ -64,10 +64,10 @@ const Navber = () => {
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
-                                <button className="btn btn-sm my-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">{user.displayName}</button>
+                                <button className="btn btn-sm my-2 bg-[#FF3811] text-white">{user.displayName}</button>
                             </li>
                             <li>
-                                <button onClick={handleLogOut} className="btn btn-sm bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Logout</button>
+                                <button onClick={handleLogOut} className="btn btn-sm bg-[#FF3811    ] text-white">Logout</button>
 
                             </li>
                         </ul>

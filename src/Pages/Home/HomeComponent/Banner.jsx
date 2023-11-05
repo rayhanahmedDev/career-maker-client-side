@@ -25,11 +25,10 @@ const Banner = () => {
                 <img src={img2} className="w-full" />
                 <div className="absolute flex items-center lg:pl-24 px-4 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
                 <div className=' text-white space-y-7 lg:w-1/2'>
-                    <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
-                    <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
-                    <div>
+                    <h2 className='text-5xl font-bold'>Free Tour Community</h2>
+                    <p>Local tours and guide services are tourism-related businesses that provide guided experiences and tours to visitors in specific locations or regions</p>
+                    <div className=''>
                         <button className='btn bg-[#FF3811] text-white border-[#FF3811]'> Discover More</button>
-                        <button className='btn btn-outline text-white ml-5'>Latest Project</button>
                     </div>
                 </div>
                 </div>
@@ -42,11 +41,10 @@ const Banner = () => {
                 <img src={img3} className="w-full" />
                 <div className="absolute flex items-center lg:pl-24 px-4 h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00) 100%)]">
                 <div className=' text-white space-y-7 lg:w-1/2'>
-                    <h2 className='text-5xl font-bold'>Affordable Price For Car Servicing</h2>
-                    <p>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
-                    <div>
+                    <h2 className='text-5xl font-bold'>Free Tour Community</h2>
+                    <p>Local tours and guide services are tourism-related businesses that provide guided experiences and tours to visitors in specific locations or regions</p>
+                    <div className=''>
                         <button className='btn bg-[#FF3811] text-white border-[#FF3811]'> Discover More</button>
-                        <button className='btn btn-outline text-white ml-5'>Latest Project</button>
                     </div>
                 </div>
                 </div>
