@@ -23,13 +23,13 @@ const AllServices = () => {
     }
 
     return (
-        <div>
-            <div className="text-center my-12">
+        <div className="">
+            <div className="text-center my-12 ">
                 {/* input field */}
-                <input type="text" id="input-field" placeholder="Type here" className="input input-bordered input-error w-full max-w-xs" />
-                <button onClick={handleSearch} className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Search</button>
+                <input type="text" id="input-field" placeholder="Search here..." className="input input-bordered input-error w-full max-w-xs" />
+                <button onClick={handleSearch} className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white mt-3 lg:mt-0">Search</button>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-12">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-5 mt-12">
                 {
                     allServices.slice(0, dataLength).map(data => <Allservice key={data._id} data={data}></Allservice>)
                 }
