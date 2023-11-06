@@ -18,8 +18,8 @@ const Service = ({ ser }) => {
                 </div>
                 <div className="p-5 lg:w-1/2">
                     <h5 className="mb-2 text-[24px] font-medium">{ServiceName}</h5>
-                    <p className="mb-3">{ServiceDescription}</p>
-                    <p>Price : ${ServicePrice}</p>
+                    <p className="mb-3 text-[#A3A3A6]">{ServiceDescription}</p>
+                    <p className="text-[#A3A3A6]">Price : ${ServicePrice}</p>
                     <div className="flex justify-between items-center">
                         { user?. email ? <div className="flex mt-2 lg:mt-0 justify-center items-center">
                             <img className="w-16 rounded-full" src={user.photoURL} alt="" />
