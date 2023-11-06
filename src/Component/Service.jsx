@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Service = ({ ser }) => {
@@ -9,7 +10,7 @@ const Service = ({ ser }) => {
         return <span className="loading loading-spinner loading-lg"></span>
     }
 
-    const { ServiceImage, ServiceName, ServiceDescription, ServicePrice, } = ser
+    const {_id, ServiceImage, ServiceName, ServiceDescription, ServicePrice, } = ser
     return (
         <div>
             <div className={`lg:max-w-2xl lg:h-[250px] lg:mx-auto w-full border border-gray-200 rounded-lg shadow dark:border-gray-700 lg:flex `}>
@@ -25,7 +26,7 @@ const Service = ({ ser }) => {
                             <img className="w-16 rounded-full" src={user.photoURL} alt="" />
                             <p className="ml-4 font-medium">{user.displayName}</p>
                         </div> : ""}
-                        <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button>
+                       <Link to={`/details/${_id}`}> <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button></Link>
                     </div>
                 </div>
             </div>

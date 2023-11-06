@@ -8,7 +8,7 @@ const Faq = () => {
                     <h2 className="text-4xl font-bold text-center"> WE ANSWERED SOME POPULAR QUESTIONS </h2>
                 </div>
                 <div className="collapse collapse-arrow bg-base-100 py-8 shadow-xl mb-6">
-                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <input type="radio" name="my-accordion-2" />
                     <div className="collapse-title text-2xl font-bold ">
                     What is the Free Tour Community?
                     </div>

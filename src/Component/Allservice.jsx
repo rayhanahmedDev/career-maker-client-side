@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Allservice = ({ data }) => {
@@ -9,7 +10,7 @@ const Allservice = ({ data }) => {
         return <span className="loading loading-spinner loading-lg"></span>
     }
 
-    const { ServiceImage, ServiceName, ServiceDescription, ServicePrice, ServiceArea } = data
+    const { _id, ServiceImage, ServiceName, ServiceDescription, ServicePrice, ServiceArea } = data
     return (
         <div>
             <div>
@@ -29,7 +30,7 @@ const Allservice = ({ data }) => {
                                 <img className="w-16 rounded-full" src={user.photoURL} alt="" />
                                 <p className="ml-4 font-medium">{user.displayName}</p>
                             </div> : ""}
-                            <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button>
+                            <Link to={`/details/${_id}`}><button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button></Link>
                         </div>
                     </div>
                 </div>
