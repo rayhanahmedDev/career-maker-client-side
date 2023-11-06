@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import './Navber.css'
+import logo from '../../assets/logot-removebg-preview.png'
 
 
 const Navber = () => {
@@ -41,7 +42,10 @@ const Navber = () => {
                     </details> : ""}
                     </ul>
                 </div>
-               <h2><span className="text-2xl font-semibold text-[#FF3300]">FREE TOUR</span><span className="text-2xl font-normal"> <br />COMMUNITY</span></h2>
+               {/* <h2><span className="text-2xl font-semibold text-[#FF3300]">FREE TOUR</span><span className="text-2xl font-normal"> <br />COMMUNITY</span></h2> */}
+               <div>
+               <img className='h-24' src={logo} alt="" />
+               </div>
             </div>
             <div className="navbar-center hidden lg:flex ">
                 <ul className="menu-horizontal py-5 px-1">

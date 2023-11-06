@@ -1,4 +1,6 @@
 import Banner from "./HomeComponent/Banner";
+import Faq from "./HomeComponent/Faq";
+import Footer from "./HomeComponent/Footer";
 import PopularService from "./HomeComponent/PopularService";
 import PriceList from "./HomeComponent/PriceList";
 import Testimonials from "./HomeComponent/Testimonials";
@@ -18,6 +20,12 @@ const Home = () => {
            </div>
            <div>
             <PriceList></PriceList>
+           </div>
+           <div>
+            <Faq></Faq>
+           </div>
+           <div>
+            <Footer></Footer>
            </div>
         </div>
     );
