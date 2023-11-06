@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 
 const Service = ({ ser }) => {
+
+    const {user} = useContext(AuthContext)
+
     const { ServiceImage, ServiceName, ServiceDescription, ServicePrice, } = ser
     return (
         <div>
@@ -13,10 +18,10 @@ const Service = ({ ser }) => {
                     <p className="mb-3">{ServiceDescription}</p>
                     <p>Price : ${ServicePrice}</p>
                     <div className="flex flex-wrap lg:justify-between items-center">
-                        <div className="flex mt-2 lg:mt-0 justify-center items-center">
-                            <img className="w-16 rounded-full" src='https://i.ibb.co/TL29bdh/user2.jpg' alt="" />
-                            <p className="ml-2 font-medium">City Walkers</p>
-                        </div>
+                        { user?. email ? <div className="flex mt-2 lg:mt-0 justify-center items-center">
+                            <img className="w-16 rounded-full" src={user.photoURL} alt="" />
+                            <p className="ml-2 font-medium w-12">{user.displayName}</p>
+                        </div> : ""}
                         <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button>
                     </div>
                 </div>
