@@ -67,7 +67,7 @@ const Navber = () => {
                                 <button className="btn btn-sm my-2 bg-[#FF3811] text-white">{user.displayName}</button>
                             </li>
                             <li>
-                                <button onClick={handleLogOut} className="btn btn-sm bg-[#FF3811    ] text-white">Logout</button>
+                                <button onClick={handleLogOut} className="btn btn-sm bg-[#FF3811] text-white">Logout</button>
 
                             </li>
                         </ul>

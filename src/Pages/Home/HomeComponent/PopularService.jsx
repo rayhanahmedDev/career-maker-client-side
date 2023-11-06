@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Service from "../../../Component/Service";
+import { Link } from "react-router-dom";
 
 
 const PopularService = () => {
@@ -21,7 +22,7 @@ const PopularService = () => {
                 }
             </div>
            <div className="text-center my-12">
-           <button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Show All</button>
+           <Link to='/allservices'><button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Show All</button></Link>
            </div>
         </div>
     );

@@ -2,16 +2,17 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 
-const Service = ({ ser }) => {
+const Allservice = ({data}) => {
 
     const {user,loading} = useContext(AuthContext)
     if(loading){
         return <span className="loading loading-spinner loading-lg"></span>
     }
 
-    const { ServiceImage, ServiceName, ServiceDescription, ServicePrice, } = ser
+    const {ServiceImage, ServiceName, ServiceDescription, ServicePrice,} = data
     return (
         <div>
+            <div>
             <div className={`lg:max-w-2xl lg:h-[250px] lg:mx-auto w-full border border-gray-200 rounded-lg shadow dark:border-gray-700 flex `}>
                 <div className="w-1/2">
                     <img className=" h-full w-64 lg:w-96 lg:h-[250px]" src={ServiceImage} alt="" />
@@ -29,8 +30,9 @@ const Service = ({ ser }) => {
                     </div>
                 </div>
             </div>
+            </div>
         </div>
     );
 };
 
-export default Service;
+export default Allservice;

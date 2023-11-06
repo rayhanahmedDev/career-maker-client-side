@@ -15,6 +15,7 @@ import AuthProvider from './provider/AuthProvider';
 import MyServices from './Pages/MyServices/MyServices';
 import AddServices from './Pages/AddServices/AddServices';
 import MySchedules from './Pages/MySchedules/MySchedules';
+import AllServices from './Pages/AllServices/AllServices';
 
 
 
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path:'/my-schedules',
         element:<MySchedules></MySchedules>
+      },
+      {
+        path:'/allservices',
+        element:<AllServices></AllServices>,
       }
     ]
   },
