@@ -21,9 +21,9 @@ const Navber = () => {
     </>
 
     const link = <>
-    <li><NavLink className='mb-2' to='/my-services'>My-services</NavLink></li>
-    <li><NavLink className='mb-2' to='/add-services'>Add-services</NavLink></li>
-    <li><NavLink className='mb-2' to='/my-schedules'>My-schedules</NavLink></li>
+    <li><NavLink className='mb-2' to='/my-services'>Manage-Services</NavLink></li>
+    <li><NavLink className='mb-2' to='/add-services'>Add-Services</NavLink></li>
+    <li><NavLink className='mb-2' to='/my-schedules'>My-Schedules</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 mt-4">

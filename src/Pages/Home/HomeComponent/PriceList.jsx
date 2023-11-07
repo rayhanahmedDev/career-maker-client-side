@@ -8,7 +8,7 @@ const PriceList = () => {
                 <p className="text-[12px] mt-4">OUR BEST SERVICES JUST FOR YOU</p>
             </div>
             <div className="my-12 w-9/12 mx-auto grid grid-cols-1 lg:grid-cols-3 gap-5">
-                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 text-white shadow-md">
+                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 shadow-md">
                     <div className="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none border-white/10 bg-clip-border">
                         <p className="block font-sans text-sm antialiased font-normal leading-normal uppercase">
                             standard
@@ -51,7 +51,7 @@ const PriceList = () => {
                         <button className="btn border-[#FF3300] bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Buy now</button>
                     </div>
                 </div>
-                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 text-white shadow-md">
+                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 shadow-md">
                     <div className="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none border-white/10 bg-clip-border">
                         <p className="block font-sans text-sm antialiased font-normal leading-normal uppercase">
                             standard
@@ -94,7 +94,7 @@ const PriceList = () => {
                         <button className="btn border-[#FF3300] bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Buy now</button>
                     </div>
                 </div>
-                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 text-white shadow-md">
+                <div className="relative flex w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-8 shadow-md">
                     <div className="relative pb-8 m-0 mb-8 overflow-hidden text-center text-gray-700 bg-transparent border-b rounded-none shadow-none border-white/10 bg-clip-border">
                         <p className="block font-sans text-sm antialiased font-normal leading-normal uppercase">
                             standard

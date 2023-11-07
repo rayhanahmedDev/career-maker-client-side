@@ -64,35 +64,35 @@ const Register = () => {
 
     return (
         <div className="hero mt-16 pb-8">
-                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-gradient-to-r from-[#FF3300] to-[#FF8938]">
+                <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Name</span>
+                                <span className="label-text">Name</span>
                             </label>
-                            <input type="text" name='name' placeholder="Your Name" className="input" required />
+                            <input type="text" name='name' placeholder="Your Name" className="input border-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Email</span>
+                                <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="Your Email" className="input " required />
+                            <input type="email" name='email' placeholder="Your Email" className="input border-black" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text text-white">Password</span>
+                                <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="Your Password" className="input " required />
+                            <input type="password" name='password' placeholder="Your Password" className="input border-black" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-white text-[#FF3300]">Register</button>
+                            <button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Register</button>
                         </div>
                         <div className="form-control mt-6">  
-                         <button onClick={handleGoogle} className="btn w-full  bg-white text-[#FF3300]"> <FcGoogle className='text-[31px]'></FcGoogle> Register With Google</button>
+                         <button onClick={handleGoogle} className="btn w-full  bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white"> <FcGoogle className='text-[31px]'></FcGoogle> Register With Google</button>
                         </div>
-                        <p className='text-center text-white'>Already have an account?<Link to='/login' className="font-bold ml-2">Login</Link></p>
+                        <p className='text-center'>Already have an account?<Link to='/login' className="font-bold ml-2">Login</Link></p>
                         {
-                            registerError && <p className='text-center text-white'>{registerError}</p>
+                            registerError && <p className='text-center'>{registerError}</p>
                         }
                         {/* {
                             success && <p className='text-center text-white'>{success}</p>
