@@ -6,8 +6,43 @@ import { AuthContext } from "../../provider/AuthProvider";
 const ServiceDetails = () => {
 
     const { user } = useContext(AuthContext)
-
     const data = useLoaderData()
+
+    const handleBooking = e => {
+        e.preventDefault()
+        const form = e.target;
+        const serviceArea = form.serviceArea.value
+        const serviceName = form.serviceName.value
+        const date = form.date.value
+        const price = form.price.value
+        const userEmail = form.userEmail.value
+        const yourEmail = form.yourEmail.value
+        const photo = form.photo.value
+
+        const bookings = {
+            serviceArea,
+            serviceName,
+            date,
+            price,
+            userEmail,
+            yourEmail,
+            photo
+        }
+        console.log(bookings);
+
+        fetch('http://localhost:5000/booking',{
+            method:"POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body:JSON.stringify(bookings)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+
+    }
     return (
         <div className="lg:h-[70vh] flex justify-center items-center">
             <div className="lg:w-9/12 lg:h-[300px] lg:mx-auto border border-gray-200 rounded-lg shadow dark:border-gray-700 lg:flex justify-between">
@@ -32,7 +67,7 @@ const ServiceDetails = () => {
                         <dialog id="my_modal_4" className="modal">
                             <div className="modal-box w-11/12 max-w-5xl">
                                 {/* form start */}
-                                <form >
+                                <form onSubmit={handleBooking}>
                                     {/* form add coffee row */}
                                     <div className="md:flex gap-4">
                                         <div className="form-control md:w-1/2 w-full">
@@ -58,10 +93,10 @@ const ServiceDetails = () => {
                                     <div className="md:flex gap-4">
                                         <div className="form-control md:w-1/2 w-full">
                                             <label className="label">
-                                                <span className="label-text">Your Name</span>
+                                                <span className="label-text">Date</span>
                                             </label>
                                             <label className="input-group ">
-                                               <input name='name' type="date" className="input input-bordered w-full" />
+                                               <input name='date' type="date" className="input input-bordered w-full" />
                                             </label>
                                         </div>
                                         <div className="form-control md:w-1/2 w-full">
@@ -86,7 +121,7 @@ const ServiceDetails = () => {
                                         </div>
                                         <div className="form-control md:w-1/2 w-full">
                                             <label className="label">
-                                                <span className="label-text">Your Email</span>
+                                                <span className="label-text">Service Provider Email</span>
                                             </label>
                                             <label className="input-group">
                                                 {user?.email ? <input type="text" name="yourEmail" value={user.email} readOnly className="input input-bordered w-full" /> : ""}
@@ -99,7 +134,7 @@ const ServiceDetails = () => {
                                                 <span className="label-text">User Email</span>
                                             </label>
                                             <label className="input-group">
-                                                {user?.email ? <input type="text" name="yourEmail" value={user.email} readOnly className="input input-bordered w-full" /> : ""}
+                                                {user?.email ? <input type="text" name="userEmail" value={user.email} readOnly className="input input-bordered w-full" /> : ""}
                                             </label>
                                     </div>
                                     <button type="submit" className="btn btn-block mt-8 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Purchase this Service</button>
