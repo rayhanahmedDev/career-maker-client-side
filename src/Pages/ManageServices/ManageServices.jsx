@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import ServiceCard from "../../Component/ServiceCard";
+import ManageCard from "../../Component/ManageCard";
 
 
-const Services = () => {
+const ManageServices = () => {
 
     const [dataService, setDataService] = useState([])
     console.log(dataService);
@@ -16,16 +16,14 @@ const Services = () => {
 
     return (
         <div>
-            <div>
-                {
-                    dataService.map(data => <ServiceCard
-                        key={data._id}
-                        data={data}
-                    ></ServiceCard>)
-                }
-            </div>
+            {
+                dataService.map(data => <ManageCard
+                    key={data._id}
+                    data={data}
+                ></ManageCard>)
+            }
         </div>
     );
 };
 
-export default Services;
+export default ManageServices;

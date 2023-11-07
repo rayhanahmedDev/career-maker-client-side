@@ -14,7 +14,7 @@ const AllServices = () => {
             .then(data => setAllService(data))
     }, [])
 
-    const handleSearch = ()=>{
+    const handleSearch = () => {
         const inputField = document.getElementById('input-field')
         const inputValue = inputField.value.toLowerCase()
         const card = allServices

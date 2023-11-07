@@ -3,7 +3,10 @@ import { AuthContext } from "../provider/AuthProvider";
 import { Link } from "react-router-dom";
 
 
+
 const Allservice = ({ data }) => {
+
+    
 
     const { user, loading } = useContext(AuthContext)
     if (loading) {
@@ -33,7 +36,9 @@ const Allservice = ({ data }) => {
                             <Link to={`/details/${_id}`}><button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button></Link>
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     );

@@ -12,12 +12,12 @@ import Services from './Pages/Services/Services';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import AuthProvider from './provider/AuthProvider';
-import MyServices from './Pages/MyServices/MyServices';
 import AddServices from './Pages/AddServices/AddServices';
 import MySchedules from './Pages/MySchedules/MySchedules';
 import AllServices from './Pages/AllServices/AllServices';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import PrivateRoute from './provider/PrivateRoute';
+import ManageServices from './Pages/ManageServices/ManageServices';
 
 
 
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/services',
-        element: <Services></Services>
+        element: <PrivateRoute><Services></Services></PrivateRoute>
       },
       {
         path: '/login',
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/my-services',
-        element: <MyServices></MyServices>
+        element: <PrivateRoute><ManageServices></ManageServices></PrivateRoute>
       },
       {
         path: '/add-services',
