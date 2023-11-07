@@ -1,11 +1,48 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
-const ManageCard = ({ data }) => {
+const ManageCard = ({ data, setDeleted, deleted }) => {
 
     const { user } = useContext(AuthContext)
-    const { serviceArea, serviceName, price, description, yourEmail, photo } = data
+    const { _id, serviceArea, serviceName, price, description, yourEmail, photo } = data;
+
+    const handleDelete = _id => {
+        console.log(_id);
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/userService/${_id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire(
+                                'Deleted!',
+                                'Your Product has been deleted.',
+                                'success'
+                            )
+                            const remaining = deleted.filter(del => del._id !== _id)
+                            setDeleted(remaining)
+                        }
+
+                    })
+            }
+        })
+    }
 
     return (
         <div>
@@ -27,8 +64,8 @@ const ManageCard = ({ data }) => {
                             <p className="ml-4 font-medium">{user.displayName}</p>
                         </div> : ""}
                         <div className="flex flex-wrap">
-                        <button className='btn lg:my-5 mr-4 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Edit</button>
-                        <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Delete</button>
+                            <Link to={`/update/${_id}`}><button className='btn lg:my-5 mr-4 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Edit</button></Link>
+                            <button onClick={() => handleDelete(_id)} className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Delete</button>
                         </div>
                     </div>
                 </div>

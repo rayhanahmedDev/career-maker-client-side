@@ -1,25 +1,21 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ManageCard from "../../Component/ManageCard";
+import { useLoaderData } from "react-router-dom";
 
 
 const ManageServices = () => {
 
-    const [dataService, setDataService] = useState([])
-    console.log(dataService);
-    useEffect(() => {
-        fetch('http://localhost:5000/userService')
-            .then(res => res.json())
-            .then(data => {
-                setDataService(data);
-            })
-    }, [])
+    const dataLoader = useLoaderData()
+    const [deleted, setDeleted] = useState(dataLoader)
 
     return (
         <div>
             {
-                dataService.map(data => <ManageCard
+                deleted.map(data => <ManageCard
                     key={data._id}
                     data={data}
+                    deleted={deleted}
+                    setDeleted={setDeleted}
                 ></ManageCard>)
             }
         </div>
