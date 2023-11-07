@@ -26,7 +26,6 @@ const ServiceDetails = () => {
                             <img className="w-16 rounded-full" src={user.photoURL} alt="" />
                             <p className="ml-4 font-medium">{user.displayName}</p>
                         </div> : ""}
-                        {/* <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>book now</button> */}
                         {/* modal section start*/}
                         {/* You can open the modal using document.getElementById('ID').showModal() method */}
                         <button className="btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white" onClick={() => document.getElementById('my_modal_4').showModal()}>book now</button>
@@ -50,7 +49,8 @@ const ServiceDetails = () => {
                                             </label>
                                             <label className="input-group">
                                                 <input type="text" name="serviceName"
-                                                value="serviceName" placeholder="Service Name" className="input input-bordered w-full" />
+                                                    defaultValue={data.ServiceName}
+                                                    readOnly placeholder="Service Name" className="input input-bordered w-full" />
                                             </label>
                                         </div>
                                     </div>
@@ -61,7 +61,7 @@ const ServiceDetails = () => {
                                                 <span className="label-text">Your Name</span>
                                             </label>
                                             <label className="input-group ">
-                                                {user?.email ? <input name='name' value={user.displayName} readOnly className="input input-bordered w-full" /> : ""}
+                                               <input name='name' type="date" className="input input-bordered w-full" />
                                             </label>
                                         </div>
                                         <div className="form-control md:w-1/2 w-full">
@@ -69,7 +69,7 @@ const ServiceDetails = () => {
                                                 <span className="label-text">Price</span>
                                             </label>
                                             <label className="input-group">
-                                                <input type="text" name="price" placeholder="Price" className="input input-bordered w-full" />
+                                                <input type="text" defaultValue={data.ServicePrice} readOnly name="price" placeholder="Price" className="input input-bordered w-full" />
                                             </label>
                                         </div>
                                     </div>
@@ -77,10 +77,11 @@ const ServiceDetails = () => {
                                     <div className="md:flex gap-4">
                                         <div className="form-control md:w-1/2 w-full">
                                             <label className="label">
-                                                <span className="label-text">Description</span>
+                                                <span className="label-text">Photo URL</span>
                                             </label>
                                             <label className="input-group">
-                                                <input type="text" name="description" placeholder="Short description" className="input input-bordered w-full" />
+                                                <input type="text" defaultValue={data.ServiceImage} readOnly name="photo" placeholder="Photo URL"
+                                                    className="input input-bordered w-full" />
                                             </label>
                                         </div>
                                         <div className="form-control md:w-1/2 w-full">
@@ -91,24 +92,23 @@ const ServiceDetails = () => {
                                                 {user?.email ? <input type="text" name="yourEmail" value={user.email} readOnly className="input input-bordered w-full" /> : ""}
                                             </label>
                                         </div>
-
                                     </div>
                                     {/* photo form */}
                                     <div className="form-control w-full">
-                                        <label className="label">
-                                            <span className="label-text">Photo URL</span>
-                                        </label>
-                                        <label className="input-group">
-                                            <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
-                                        </label>
+                                    <label className="label">
+                                                <span className="label-text">User Email</span>
+                                            </label>
+                                            <label className="input-group">
+                                                {user?.email ? <input type="text" name="yourEmail" value={user.email} readOnly className="input input-bordered w-full" /> : ""}
+                                            </label>
                                     </div>
-                                    <input type="submit" value="Add to Services" className="btn btn-block mt-8 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white" />
+                                    <button type="submit" className="btn btn-block mt-8 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Purchase this Service</button>
                                 </form>
                                 {/* form end */}
                                 <div className="modal-action">
                                     <form method="dialog">
                                         {/* if there is a button, it will close the modal */}
-                                        <button className="btn">Close</button>
+                                        <button className="btn bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white">Close</button>
                                     </form>
                                 </div>
                             </div>
