@@ -60,7 +60,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/my-schedules',
-        element:<MySchedules></MySchedules>
+        element:<MySchedules></MySchedules>,
+        loader : () => fetch('http://localhost:5000/bookings')
       },
       {
         path:'/allservices',

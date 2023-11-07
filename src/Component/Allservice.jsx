@@ -38,7 +38,6 @@ const Allservice = ({ data }) => {
                     </div>
                     
                 </div>
-                
             </div>
         </div>
     );
