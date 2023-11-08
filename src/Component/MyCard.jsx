@@ -25,7 +25,11 @@ const MyCard = ({ data, handleUpdateOne }) => {
                         </div>
                         {/* {status === 'pending' ? <span className="font-bold text-primary">Complete</span> : <button onClick={() => handleUpdateOne(_id)} className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Pending</button>} */}
                         <div>
-                            {status === 'pending' ? <span className="font-bold text-primary">Completed</span> : <select onChange={() => handleUpdateOne(_id)} name="cars" id="cars">
+                            {status === 'pending' ? <select name="cars" id="cars">
+                                <option value="volvo">Pending</option>
+                                <option value="saab">In Progress</option>
+                                <option value="opel">Completed</option>
+                            </select> : <select onChange={() => handleUpdateOne(_id)} name="cars" id="cars">
                                 <option value="volvo">Pending</option>
                                 <option value="saab">In Progress</option>
                                 <option value="opel">Completed</option>
