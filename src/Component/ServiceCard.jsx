@@ -2,8 +2,8 @@ import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
 
-
 const ServiceCard = ({ data }) => {
+
     const { user } = useContext(AuthContext)
     const { serviceArea, serviceName, price, description, yourEmail, photo } = data
     return (
