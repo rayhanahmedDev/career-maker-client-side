@@ -2,6 +2,7 @@
 import { useLoaderData } from "react-router-dom";
 import MyCard from "../../Component/MyCard";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 
 const MySchedules = () => {
@@ -23,6 +24,12 @@ const MySchedules = () => {
         .then(data => {
             console.log(data);
             if(data.modifiedCount > 0){
+                Swal.fire({
+                    title: 'Success',
+                    text: 'Successfully Updated Data',
+                    icon: 'success',
+                    confirmButtonText: 'Close'
+                })
                 // update status
                 const remaining = booking.filter(book => book._id !== id)
                 const update = booking.find(book => book._id === id)
