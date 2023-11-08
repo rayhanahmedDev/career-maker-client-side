@@ -44,7 +44,7 @@ const ServiceDetails = () => {
             if (data.insertedId) {
                 Swal.fire({
                     title: 'Success',
-                    text: 'Services Added Successfully',
+                    text: 'Booking Successfully',
                     icon: 'success',
                     confirmButtonText: 'Close'
                 })

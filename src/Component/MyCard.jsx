@@ -1,8 +1,9 @@
 
 
-const MyCard = ({data}) => {
-  
-    const {serviceArea, serviceName, date, price, userEmail, yourEmail, photo} = data;
+const MyCard = ({ data, handleUpdateOne }) => {
+
+    const { _id, status, serviceArea, serviceName, date, price, userEmail, yourEmail, photo } = data;
+
 
     return (
         <div className="my-12">
@@ -22,7 +23,14 @@ const MyCard = ({data}) => {
                             <p className="font-medium">User Email : {userEmail}</p>
                             <p className="font-medium">Your Email : {yourEmail}</p>
                         </div>
-                        <button className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>View Details</button>
+                        {/* {status === 'pending' ? <span className="font-bold text-primary">Complete</span> : <button onClick={() => handleUpdateOne(_id)} className='btn lg:my-5 mt-2 bg-gradient-to-r from-[#FF3300] to-[#FF8938] text-white'>Pending</button>} */}
+                        <div>
+                            {status === 'pending' ? <span>Completed</span> : <select onChange={() => handleUpdateOne(_id)} name="cars" id="cars">
+                                <option value="volvo">Pending</option>
+                                <option value="saab">In Progress</option>
+                                <option value="opel">Completed</option>
+                            </select> }
+                        </div>
                     </div>
                 </div>
 
