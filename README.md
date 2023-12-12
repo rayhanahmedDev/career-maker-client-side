@@ -33,4 +33,4 @@
 
 # Project Selling line
 
-- we provide tour community where user want to visit. this project solving time saving.
+- we provide tour community where user want to visit. this project solved users time saving.
